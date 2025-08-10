@@ -23,11 +23,11 @@ public class RestaurantTableService {
         return restaurantTableRepository.findAll();
     }
 
-    public RestaurantTable getById(Long id) {
+    public RestaurantTable getTableById(Long id) {
         return restaurantTableRepository.findById(id).orElse(null);
     }
 
-    public void deleteById(Long id) {
+    public void deleteTableById(Long id) {
         restaurantTableRepository.deleteById(id);
     }
 

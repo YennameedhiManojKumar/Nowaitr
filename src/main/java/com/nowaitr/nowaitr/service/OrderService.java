@@ -30,4 +30,8 @@ public class OrderService {
         orderRepository.deleteById(id);
     }
 
+    public void deleteOrder(Long id) {
+        orderRepository.deleteById(id);
+    }
+
 }

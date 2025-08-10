@@ -22,11 +22,19 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User getById(Long id) {
+    public User getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
-    public void deleteById(Long id) {
+    public void deleteUserById(Long id) {
         userRepository.deleteById(id);
+    }
+
+    public User updateUser(Long id, User user) {
+        if (userRepository.existsById(id)) {
+            user.setId(id);
+            return userRepository.save(user);
+        }
+        return null;
     }
 }

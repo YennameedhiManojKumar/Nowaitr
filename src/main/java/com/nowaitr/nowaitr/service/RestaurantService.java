@@ -24,11 +24,25 @@ public class RestaurantService {
         return restaurantRepository.findAll();
     }
 
-    public Restaurant getById(Long id) {
+    public Restaurant getRestaurantById(Long id) {
         return restaurantRepository.findById(id).orElse(null);
     }
 
     public void deleteById(Long id) {
         restaurantRepository.deleteById(id);
     }
+
+    public Restaurant updateRestaurant(Long id, Restaurant restaurant) {
+        if (restaurantRepository.existsById(id)) {
+            restaurant.setId(id);
+            return restaurantRepository.save(restaurant);
+        } else {
+            return null;
+        }
+    }
+
+    public void deleteRestaurant(Long id) {
+        restaurantRepository.deleteById(id);
+    }
+
 }

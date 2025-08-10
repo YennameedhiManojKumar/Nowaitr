@@ -26,7 +26,14 @@ public class OrderItemService {
         return orderItemRepository.findById(id).orElse(null);
     }
 
-    public void deleteById(Long id) {
+    public void deleteOrderById(Long id) {
         orderItemRepository.deleteById(id);
+    }
+
+    public void deleteByItem(Long id) {
+        OrderItem orderItem = getById(id);
+        if (orderItem != null) {
+            orderItemRepository.delete(orderItem);
+        }
     }
 }
