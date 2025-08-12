@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nowaitr.nowaitr.model.MenuItem;
 import com.nowaitr.nowaitr.service.MenuItemService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/menu-items")
+@Tag(name = "Menu Item Management", description = "Operations related to menu item management")
 public class MenuItemController {
 
     private final MenuItemService menuItemService;

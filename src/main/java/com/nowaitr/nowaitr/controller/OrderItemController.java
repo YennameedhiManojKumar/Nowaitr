@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nowaitr.nowaitr.model.OrderItem;
 import com.nowaitr.nowaitr.service.OrderItemService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -12,12 +15,12 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/order-items")
+@Tag(name = "Order Item Management", description = "Operations related to order item management")
 public class OrderItemController {
 
     private final OrderItemService orderItemService;

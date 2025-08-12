@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import com.nowaitr.nowaitr.model.Order;
 import com.nowaitr.nowaitr.service.OrderService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
+@Tag(name = "Order Management", description = "Operations related to order management")
 public class OrderController {
 
     private final OrderService orderService;

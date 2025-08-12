@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import com.nowaitr.nowaitr.model.RestaurantTable;
 import com.nowaitr.nowaitr.service.RestaurantTableService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/restaurant-tables")
+@Tag(name = "Restaurant Table Management", description = "Operations related to restaurant table management")
 public class RestaurantTableController {
 
     private final RestaurantTableService restaurantTableService;

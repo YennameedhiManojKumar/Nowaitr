@@ -1,5 +1,6 @@
 package com.nowaitr.nowaitr.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,10 @@ public class RestaurantTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "table_number", nullable = false)
     private int tableNumber;
+
+    @Column(name = "capacity", nullable = false)
     private int capacity;
 
     @ManyToOne

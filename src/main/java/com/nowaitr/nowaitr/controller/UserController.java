@@ -2,12 +2,16 @@ package com.nowaitr.nowaitr.controller;
 
 import com.nowaitr.nowaitr.model.User;
 import com.nowaitr.nowaitr.service.UserService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@Tag(name = "User Management", description = "Operations related to user management")
 public class UserController {
 
     private UserService userService;
@@ -18,6 +22,7 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user) {
+        user.setId(null);
         return userService.saveUser(user);
     }
 
